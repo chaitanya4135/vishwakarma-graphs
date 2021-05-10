@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	title: {
+		text: "FLOW OF WATER"
+	},
+	axisX: {
+		valueFormatString: "hh:mm"
+	},
+	axisY2: {
+		title: "water consumed",
+		suffix: "ltr"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		verticalAlign: "top",
+		horizontalAlign: "center",
+		dockInsidePlotArea: true,
+		itemclick: toogleDataSeries
+	},
+	data: [{
+		type:"line",
+		axisYType: "secondary",
+		name: "field1",
+		showInLegend: true,
+		markerSize: 0,
+		yValueFormatString: "#,###ltr",
+		dataPoints: [		
+{x: new Date(Date.UTC (2021, 03, 7, 10,3,20 ) ),y:0.42},
+{x: new Date(Date.UTC (2021, 03, 7, 10,3,36)),y:0.42},
+{x: new Date(Date.UTC (2021, 03, 7, 10,12,44)),y:0.3},
+{x: new Date(Date.UTC (2021, 03, 7, 10,17,05)),y:0.41},
+{x: new Date(Date.UTC (2021, 03, 7, 10,17,22)),y:11.75},
+{x: new Date(Date.UTC (2021, 03, 7, 10,17,38)),y:11.77},
+{x: new Date(Date.UTC (2021, 03, 7, 10,17,55)),y:10.77},
+{x: new Date(Date.UTC (2021, 03, 7, 10,18,11)),y:10.45 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,18,27)),y:3.51 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,18,56)),y:0.07 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,19,13)),y:10.05 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,19,28)),y:10.46 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,19,44)),y:9.81 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,20,00)),y:11.37 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,20,17)),y:10.86 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,20,33)),y:11.45 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,20,49)),y:10.09 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,21,04)),y:11.06 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,21,19)),y:10.73 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,21,36)),y:10.33 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,21,52)),y:10.23 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,22,08)),y:10.87 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,22,23)),y:11.74 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,22,38)),y:0.63 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,22,54)),y:10.1 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,23,10)),y:11.62 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,23,27)),y:11.61 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,23,42)),y:11.18 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,23,58)),y:12.41 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,24,14)),y:10.97 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,24,29)),y:11.81 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,24,45)),y:11.62 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,25,00)),y:11.97 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,25,16)),y:10.45 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,25,32)),y:11.06 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,25,48)),y:12.38 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,26,05)),y:11.5 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,26,21)),y:11.68 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,26,37)),y:12.24 },
+{x: new Date(Date.UTC (2021, 03, 7, 10,26,52)),y:11.07 }
+
+			]
+		
+		}]		
+});
+chart.render();
+
+function toogleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 400px; width: 100%; margin-top: 60px;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

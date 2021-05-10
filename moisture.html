@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+//Better to construct options first and then pass it as a parameter
+var options = {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "moisture level"
+	},
+	axisY2:{
+		prefix: "",
+		lineThickness: 0				
+	},
+	toolTip: {
+		shared: true
+	},
+	legend:{
+		verticalAlign: "top",
+		horizontalAlign: "center"
+	},
+	data: [
+	{     
+		type: "stackedBar",
+		showInLegend: true,
+		axisYType: "secondary",
+		dataPoints: [
+			{ y: 500, label: "sensor1", color:"lightblue" },
+			{ y: 250, label: "sensor2", color:"#7E8F74" },
+			{ y: 455, label: "sensor3", color:"lightblue" },
+			{ y: 546, label: "sensor4", color:"lightblue" },
+			{ y: 864, label: "sensor5", color:"#F0D6A7" },
+			{ y: 593, label: "sensor6", color:"lightblue" },
+			{ y: 700, label: "sensor7", color:"#F0D6A7" },
+			{ y: 654, label: "sensor8", color:"#F0D6A7" },
+			{ y: 653, label: "sensor9", color:"#F0D6A7" },
+			{ y: 418, label: "sensor10",color:"#7E8F74" }
+		]
+
+	}
+	]
+};
+
+$("#chartContainer").CanvasJSChart(options);
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>
